@@ -45,7 +45,9 @@ That's state-as-files. The rest is mechanics.
 
 ### 1. The project goal lives in the plan, under version
 
-The plan opens with the project's goal. One sentence. No "we'll discuss later," no "roughly understood," no "we'll figure it out as we go." The goal is explicit, in a file, readable in two seconds.
+The plan opens with the project's goal. One sentence, **measurable**. Not "improve onboarding," but "reduce drop-off at step 3 from 40% to 25%." Not "clean up the requirements," but "classify 1,200 stories into keep/kill/fix by May 13." Measurability is what gives you a "finish" check — without it the agent doesn't know when the work is done, and drifts or loops.
+
+No "we'll discuss later," no "roughly understood," no "we'll figure it out as we go." The goal is explicit, in a file, readable in two seconds.
 
 What this buys you. Every session — yours tomorrow, another agent's, a colleague's — starts by reading the goal. Nobody drifts on "what are we even doing." The agent doesn't slide into an adjacent problem over five sessions. The project's finale is checked against what's written on line one, not against your interpretation of the goal three weeks in.
 
@@ -188,16 +190,19 @@ cp stage-plan/_template.md stage-plan/SP-002-classify.md
 
 After 3-4 SPs the loop becomes automatic. After 10, `git log --oneline` already reads like a project map.
 
-## When this fits
+## Where the value is
 
-- Large tasks running across many sessions (audits, migrations, classification, refactors, research).
-- Work shared between agents and humans, between people on a team.
-- Anywhere you've felt "I forgot what I decided last week" or "the previous agent left me nothing to pick up from."
+The framework only earns its keep at the intersection of three conditions. All three have to hold at once — drop any one and the protocol turns into overhead.
 
-## When this doesn't fit
+1. **The goal is measurable.** There's a way to check "did we get there or not." "Cut P95 latency by 30%," "classify 18k stories into six buckets," "estimate the project by May 13." Without measurability the agent doesn't know when it's done — it drifts or loops.
 
-- **One-shot tasks** — no handoff needed; one session covers it.
-- **Autonomous agent loops** — this framework assumes a human in the loop at every step (verify blocks, artifact review, explicit SP closure). There is no auto-chain of agents executing without supervision. If you want full autonomy, this is the wrong shape.
+2. **Many iterations with agents.** The task doesn't fit in one session. Days, weeks, sometimes months. Multiple agents in a chain — or you-tomorrow as "another agent." If one session covers it, no handoff is needed and the framework is overhead.
+
+3. **Every step through manual validation.** Verify block, artifact review, explicit SP closure by a human. This is **supervised agent work**, not an autonomous loop. Want full autonomy without a human in the loop — that's a different template.
+
+Typical work in the value zone: codebase audits, data migrations, multi-pass classification, large-scope estimation, research reviews, long refactors.
+
+Drop measurability — the agent drifts. Drop iterativity — the overhead isn't justified. Drop manual validation — silent errors accumulate. All three or none.
 
 ## Closing
 
