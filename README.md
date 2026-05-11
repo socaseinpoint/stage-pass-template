@@ -23,7 +23,7 @@ A protocol for multi-session agent-driven work. State lives in files so any next
 3. Open `CLAUDE.md`, fill in the `<...>` blanks: project name, goal, output destinations, state families, workspace policy.
 4. Copy `plans/_template.md` → `plans/PLAN-v1.md`. Fill in stages.
 5. Update `plans/PLAN-current.md` to point at `PLAN-v1.md`.
-6. Open first session: copy `stage-plan/_template.md` → `stage-plan/SP-001-<what>.md`. Fill in.
+6. Open first session: copy `stage-plan/_template.md` → `stage-plan/SP-001-<what>.md`. Fill in. Example: `stage-plan/SP-001-inventory-service-a.md` (kebab-case short title describing the goal).
 7. Work. Produce artifacts under `artifacts/SP-001/`. Close SP. Commit. Open SP-002.
 
 ## Layout
@@ -62,7 +62,7 @@ examples/
 - **State lives in files. Chat is live but ephemeral.**
 - **PLAN is immutable per version.** New strategy = new file.
 - **One stage-plan = one session handoff.** Sequential `SP-NNN`.
-- **One pass = one lens.** Don't mix.
+- **One pass = one lens.** A "lens" is one classification/check applied across the corpus (e.g. dedup OR security-pass OR inventory — never mixed in one pass).
 - **Verify block at end of every pass.** Counts + 3 samples.
 - **Commits are part of the protocol.** `git log` = handoff timeline.
 - **No hyperlinks from PLAN to stage-plans.** Couple by ID only.
