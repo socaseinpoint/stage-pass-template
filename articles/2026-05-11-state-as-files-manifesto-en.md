@@ -35,7 +35,7 @@ A parallel from the world of code. Git has been around for 20 years. We long ago
 The same principle works for agent-driven tasks:
 
 - **Chat** is live working memory **inside one session**. Back-and-forth, iteration, thinking out loud.
-- **Files** are memory **across sessions**. The plan, stage-plans, artifacts, blockers.
+- **Files** are memory **across sessions**. The project goal, the stage plan, the stage-plans, the artifacts, the blockers — everything under git history.
 
 Chat isn't killed. It stays live, a working instrument. But when the session ends, nothing important is left there. Everything is in files. The next session — yours, another agent's, a colleague's — opens the files and continues.
 
@@ -43,13 +43,15 @@ That's state-as-files. The rest is mechanics.
 
 ## Principles
 
-### 1. The plan is immutable per version
+### 1. The project goal lives in the plan, under version
 
-One strategic document: `plans/PLAN-v1.md`. Strategy changes — write `PLAN-v2.md`. You don't edit v1 in place, you don't delete it, you archive it. A README points at the current version.
+The plan opens with the project's goal. One sentence. No "we'll discuss later," no "roughly understood," no "we'll figure it out as we go." The goal is explicit, in a file, readable in two seconds.
 
-Why. A mutating plan rots. Sub-stages multiply: `S-04` becomes `S-04`, `S-04a`, `S-04b`. Hyperlinks break. Status markers contradict reality. Two weeks in, nobody trusts the document — it's easier to ignore than reconcile.
+What this buys you. Every session — yours tomorrow, another agent's, a colleague's — starts by reading the goal. Nobody drifts on "what are we even doing." The agent doesn't slide into an adjacent problem over five sessions. The project's finale is checked against what's written on line one, not against your interpretation of the goal three weeks in.
 
-Immutability makes a strategy shift a **deliberate act**. Write `PLAN-v2`, summarize the diff against v1 in the header: "added stage S-05 after the PM review on 2026-05-11." This is rare in practice (most projects ship on v1). But v1 is always trustworthy at the moment its version was frozen.
+The goal changes — you write `PLAN-v2.md` with an explicit diff against v1 in the header: "added stage S-05 after the PM review on 2026-05-11." v1 doesn't get edited, isn't deleted, stays archived. A README points at the current version. Changing the goal is a deliberate act, recorded in git history, visible as a two-line diff.
+
+The same rule applies to the rest of the plan: stages, exit criteria, constraints. The plan is a strategic snapshot, frozen per version. A mutating plan rots: sub-stages multiply (`S-04` → `S-04a` → `S-04b`), status markers contradict reality, two weeks in nobody trusts the document. Immutability is what preserves trust in v1 at the moment its version was frozen. It happens rarely (most projects ship on v1). But v1 is always a working snapshot.
 
 ### 2. One stage-plan = one session handoff
 
