@@ -68,6 +68,8 @@ First session. Inventory tool is `cloc` + manual module listing. Service-a uses 
 ## Goal of this session
 Produce inventory of service-a: files, modules, external deps, public surface.
 
+> Note: `## Inputs` and `## Steps` sections omitted for brevity — they are required in real SPs per `stage-plan/_template.md`.
+
 ## Verify block
 Items: 142 files, 23 modules, 47 deps.
 Samples (3): `auth/login.ts`, `billing/invoice.ts`, `shared/db.ts`.

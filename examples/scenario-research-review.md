@@ -37,6 +37,8 @@ Note: P-017 is a survey paper — extract themes, skip methods.
 ## Goal of this session
 Produce one extraction artifact per paper P-016..P-020.
 
+> Note: `## Inputs` and `## Steps` sections omitted for brevity — they are required in real SPs per `stage-plan/_template.md`.
+
 ## Verify block
 Papers extracted: 5/5.
 Samples (3): P-016 § findings, P-018 § methods, P-020 § limitations.

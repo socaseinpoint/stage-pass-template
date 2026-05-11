@@ -28,6 +28,8 @@ Migrating 18,000 customer records from System Old to System New. Field semantics
 ## Goal of this session
 Transform batch-1 high-confidence records to New schema. Reject any record where any field flips confidence to <high.
 
+> Note: `## Inputs` and `## Steps` sections omitted for brevity — they are required in real SPs per `stage-plan/_template.md`.
+
 ## Verify block
 Input: 6000. Transformed: 5876. Rejected for re-triage: 124.
 Samples (3): R-00041 (clean), R-00302 (clean), R-04711 (clean).
