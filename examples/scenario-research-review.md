@@ -41,7 +41,10 @@ Produce one extraction artifact per paper P-016..P-020.
 
 ## Verify block
 Papers extracted: 5/5.
-Samples (3): P-016 § findings, P-018 § methods, P-020 § limitations.
+Samples (3, quoted):
+- P-016 § findings: "RAG outperforms baseline by 14% on Topic-X recall, 95% CI [12,16]"
+- P-018 § methods: "Authors used a 5-shot prompt with retrieval over a 12k-document corpus"
+- P-020 § limitations: "Generalization to languages other than English untested"
 
 ## Outputs
 - artifacts/SP-005/A-01-P016.md

@@ -32,7 +32,10 @@ Transform batch-1 high-confidence records to New schema. Reject any record where
 
 ## Verify block
 Input: 6000. Transformed: 5876. Rejected for re-triage: 124.
-Samples (3): R-00041 (clean), R-00302 (clean), R-04711 (clean).
+Samples (3, quoted):
+- R-00041: `{old_id: "X41", new_id: "U41", status: "active", migrated_at: "..."}` — clean
+- R-00302: `{old_id: "X302", new_id: "U302", status: "active", migrated_at: "..."}` — clean
+- R-04711: `{old_id: "X4711", new_id: "U4711", status: "active", migrated_at: "..."}` — clean
 
 ## Outputs
 - artifacts/SP-003/A-01-transformed.jsonl (linked, not inline)

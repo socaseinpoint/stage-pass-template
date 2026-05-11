@@ -72,7 +72,10 @@ Produce inventory of service-a: files, modules, external deps, public surface.
 
 ## Verify block
 Items: 142 files, 23 modules, 47 deps.
-Samples (3): `auth/login.ts`, `billing/invoice.ts`, `shared/db.ts`.
+Samples (3, quoted):
+- `auth/login.ts` — 142 LOC, exports `login()`, `logout()`, `refreshToken()`
+- `billing/invoice.ts` — 89 LOC, exports `Invoice` class with `compute()`, `render()`
+- `shared/db.ts` — 56 LOC, exports `getPool()`, `withTransaction()`
 
 ## Outputs
 - artifacts/SP-001/A-01-inventory.md
