@@ -43,7 +43,7 @@ Cross-refs are explicit by ID. PLAN does not link to stage-plans — coupling is
 | `priority-*` | `priority-p0`, `priority-p1`, `priority-p2` | lead        | S-04         |
 | `status-*`   | `status-open`, `status-blocked`, `status-resolved` | agent | —            |
 
-Stages frozen for label families: after the listed stage, values may not be relabeled without an explicit decision log entry.
+Stages frozen for label families: after the listed stage, values may not be relabeled without a decision recorded in that pass's apply-log artifact.
 
 ### Source-system gotchas
 
@@ -86,7 +86,7 @@ Mix is OK: e.g. `workspace/raw/` ignored while `workspace/blockers/` tracked. Up
 
 ## Things to avoid
 
-- Don't relabel frozen state families without a decision log entry.
+- Don't relabel frozen state families without an apply-log decision entry.
 - Don't write inside `workspace/raw/` — sources are immutable.
 - Don't push mass-edits to external systems without dry-run counts first (verify block protects against fan-out bugs).
 - Don't mix lenses in one pass.

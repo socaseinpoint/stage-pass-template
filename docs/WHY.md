@@ -40,7 +40,7 @@ Overrun passes turn into multi-lens passes (the operator silently adds "while I'
 
 If `severity-high` can flip back to `severity-low` after stage 4, every downstream pass has to recheck it. The cost of late-bound state is enormous in fan-out. Freezing is what lets `S-05` trust `S-03`'s output without re-verifying every item.
 
-The escape hatch is the decision log — relabeling is allowed, but it's deliberate and recorded.
+The escape hatch is the apply-log decision entry — relabeling is allowed, but it's deliberate and recorded.
 
 ## Why no hyperlinks from PLAN to stage-plans
 
@@ -62,7 +62,7 @@ The cost is one commit per closure (free). The benefit is auditable history with
 | "This pass also did some cleanup while we're here"           | Errors hide; diff unreviewable         | Defer cleanup to its own pass        |
 | "Skipping verify block because it's a small pass"            | Fan-out bugs surface downstream        | Verify block always                  |
 | "The SP is taking longer than estimated, I'll extend it"     | Stale handoff; multi-lens drift        | Close as `done` with overflow noted in handoff section; open next SP for remainder |
-| "I'll relabel a few without a decision log entry"            | Downstream passes can't trust upstream | Decision log entry first             |
+| "I'll relabel a few without an apply-log decision entry"     | Downstream passes can't trust upstream | Apply-log decision entry first       |
 | "PLAN-v1 links to SP-003 § 'Findings'"                       | Link rot on SP supersede               | Reference by ID in prose             |
 | "Stage-plan describes 3 goals to do this session"            | Becomes multi-lens; hard to verify     | Split into 3 SPs                     |
 | "Workspace policy not declared, files dumped wherever"       | Secrets leak; repo bloats              | Declare in CLAUDE.md before SP-001   |

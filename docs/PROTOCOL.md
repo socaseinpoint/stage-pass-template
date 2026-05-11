@@ -84,7 +84,9 @@ Verify blocks catch fan-out bugs early — if the counts don't reconcile across 
 
 ## Frozen state families
 
-A family is a set of labels/statuses that, once assigned in a given stage, cannot be relabeled without an explicit decision-log entry. CLAUDE.md declares which families freeze after which stage. Freezing is what makes downstream passes trust the upstream classification.
+A family is a set of labels/statuses that, once assigned in a given stage, cannot be relabeled without an explicit apply-log decision entry. CLAUDE.md declares which families freeze after which stage. Freezing is what makes downstream passes trust the upstream classification.
+
+When relabeling is required, record the rationale in the closing SP's apply-log artifact (`A-NN-apply-log.md`) as an apply-log decision entry. This is the framework's decision record — no separate file.
 
 ## Workspace storage policies
 
