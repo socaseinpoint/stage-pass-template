@@ -125,7 +125,7 @@ Findings: 23 (12 high, 8 med, 3 low).
 Samples (3): F-001 (auth bypass), F-007 (sql-fragment), F-019 (open redirect).
 ```
 
-`severity-*` family freezes after S-02 closes for a service.
+`severity-*` family freezes when S-02 closes globally (i.e., all four services audited).
 
 ## Things this scenario demonstrates
 
