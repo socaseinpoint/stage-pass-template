@@ -30,11 +30,11 @@ Solo researcher reviewing ~80 papers on Topic X. Goal: a synthesis report. Sessi
 **Prev:** SP-004
 **Status:** done
 
-## Context for next agent
+## Context for the next agent
 SP-002..SP-004 covered P-001..P-015. Extraction template stable since SP-002.
 Note: P-017 is a survey paper — extract themes, skip methods.
 
-## Goal
+## Goal of this session
 Produce one extraction artifact per paper P-016..P-020.
 
 ## Verify block

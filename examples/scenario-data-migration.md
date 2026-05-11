@@ -25,7 +25,7 @@ Migrating 18,000 customer records from System Old to System New. Field semantics
 **Scope:** batch-1 (records 1-6000)
 **Status:** done
 
-## Goal
+## Goal of this session
 Transform batch-1 high-confidence records to New schema. Reject any record where any field flips confidence to <high.
 
 ## Verify block

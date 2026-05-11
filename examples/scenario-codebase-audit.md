@@ -62,7 +62,7 @@ Agent reads PLAN-v1 § S-01, picks `service-a`, runs inventory.
 **Opened-at:** 2026-05-12
 **Closed-at:** 2026-05-12
 
-## Context for next agent
+## Context for the next agent
 First session. Inventory tool is `cloc` + manual module listing. Service-a uses 3 frameworks.
 
 ## Goal of this session
@@ -116,7 +116,7 @@ After SP-001..SP-004 covered all four services' inventories, S-01 exits.
 **Prev:** SP-004
 **Status:** done
 
-## Context for next agent
+## Context for the next agent
 S-01 done for all 4 services. Inventories in artifacts/SP-001..SP-004.
 Tool for this lens: `semgrep` with ruleset X.
 
