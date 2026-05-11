@@ -1,0 +1,25 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Claude / agent caches
+.claude/
+.cache/
+
+# Workspace storage policy
+# Default: workspace/ is tracked. Per-project override:
+#   - For `external` policy: uncomment paths under workspace/raw/
+#   - For `ignored` policy: uncomment workspace/raw/ entirely
+# Examples (uncomment as needed):
+# workspace/raw/
+# workspace/raw/large-corpus/
+# workspace/private/
+
+# Local-only files
+*.local
+*.local.*
