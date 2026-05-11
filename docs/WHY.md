@@ -61,7 +61,7 @@ The cost is one commit per closure (free). The benefit is auditable history with
 | "I'll just update PLAN.md in place"                          | Trust in PLAN erodes; diff lost        | Write PLAN-vN+1; archive vN          |
 | "This pass also did some cleanup while we're here"           | Errors hide; diff unreviewable         | Defer cleanup to its own pass        |
 | "Skipping verify block because it's a small pass"            | Fan-out bugs surface downstream        | Verify block always                  |
-| "The SP is taking longer than estimated, I'll extend it"     | Stale handoff; multi-lens drift        | Close as `partial`; open next SP     |
+| "The SP is taking longer than estimated, I'll extend it"     | Stale handoff; multi-lens drift        | Close as `done` with overflow noted in handoff section; open next SP for remainder |
 | "I'll relabel a few without a decision log entry"            | Downstream passes can't trust upstream | Decision log entry first             |
 | "PLAN-v1 links to SP-003 § 'Findings'"                       | Link rot on SP supersede               | Reference by ID in prose             |
 | "Stage-plan describes 3 goals to do this session"            | Becomes multi-lens; hard to verify     | Split into 3 SPs                     |
