@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "current_plan": "PLAN-v1",
+  "last_session": {
+    "sp_id": null,
+    "closed_at": null,
+    "scope": null
+  },
+  "next_session": {
+    "expected_sp_id": "SP-001",
+    "starting_stage": "S-01",
+    "scope": null,
+    "notes": "First session of the project. Read README.md, plans/PLAN-current.md, and any agent-inbox entries before starting."
+  },
+  "open_blockers": {
+    "domain": [],
+    "agent_inbox": []
+  }
+}
