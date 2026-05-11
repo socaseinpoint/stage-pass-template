@@ -150,7 +150,41 @@ Escape hatch остаётся: перевесить ярлык можно, но 
 - `docs/WHY.md` — рационализация каждого правила + таблица антипаттернов
 - Три абстрактных примера сценариев (codebase audit, data migration, research review) — каждый показывает как протокол ложится на конкретный класс задач
 
-Клонируешь. Заполняешь `<...>` placeholders в `CLAUDE.md`. Копируешь `_template.md` в `PLAN-v1.md`, расписываешь стадии. Открываешь первый SP. Работаешь.
+Минимальный цикл:
+
+```bash
+# 1. Клонировать шаблон под свой проект
+git clone https://github.com/socaseinpoint/stage-pass-template.git my-project
+cd my-project
+rm -rf .git && git init   # начать свою историю
+
+# 2. Заполнить конвенции
+$EDITOR CLAUDE.md         # заменить <...> placeholders
+                          # state families, workspace policy, gotchas
+
+# 3. Написать первую версию плана
+cp plans/_template.md plans/PLAN-v1.md
+$EDITOR plans/PLAN-v1.md
+$EDITOR plans/PLAN-current.md   # указать на PLAN-v1.md
+
+# 4. Открыть первую сессию-handoff
+cp stage-plan/_template.md stage-plan/SP-001-collect-inputs.md
+$EDITOR stage-plan/SP-001-collect-inputs.md
+
+# 5. Работать. Складывать артефакты по ходу пасса.
+mkdir -p artifacts/SP-001
+$EDITOR artifacts/SP-001/A-01-inventory.md
+$EDITOR artifacts/SP-001/A-02-apply-log.md   # verify block здесь
+
+# 6. Закрыть SP коммитом (sp status → done)
+git add -A
+git commit -m "[SP-001] close: collect inputs"
+
+# 7. Следующая сессия — новый SP, тот же цикл
+cp stage-plan/_template.md stage-plan/SP-002-classify.md
+```
+
+Через 3-4 SP цикл становится автоматическим. Через 10 — `git log --oneline` уже читается как карта проекта.
 
 ## Когда это нужно
 
@@ -160,17 +194,14 @@ Escape hatch остаётся: перевесить ярлык можно, но 
 
 ## Когда НЕ нужно
 
-- One-shot задачи (handoff не нужен).
-- Real-time коллаборация (это async-only протокол).
-- Везде где один PR / один commit message достаточен.
+- **One-shot задачи** — handoff не нужен, всё умещается в одну сессию.
+- **Автономная агентная логика** — здесь каждый шаг проходит через ручную валидацию (verify block, ревью артефактов, явное закрытие SP). Нет автономной цепочки агентов без человека в петле. Если нужна полная автономия — это другой шаблон.
 
 ## Финал
 
 Идея простая. State в файлах, чат живой. Git и его апологеты делают это с кодом 20 лет — никто давно не спорит. Для работы с AI-агентами на длинных задачах это так же критично — потому что агенты помнят прошлую сессию **ещё хуже** чем люди.
 
 Чат — рабочая память. Файлы — память между сессиями. Когда чат умирает, работа не должна умирать вместе с ним.
-
-Попробуй на одной реальной задаче, прогони 5-7 SP, посмотри как идёт. Через неделю либо скажешь спасибо, либо найдёшь где конвенции жмут — то и то полезный сигнал. Issues и PR welcome.
 
 ---
 
