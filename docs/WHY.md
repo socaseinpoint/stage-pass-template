@@ -38,7 +38,7 @@ Overrun passes turn into multi-lens passes (the operator silently adds "while I'
 
 ## Why frozen state families
 
-If `kind-req` can flip back to `kind-noise` after stage 4, every downstream pass has to recheck it. The cost of late-bound state is enormous in fan-out. Freezing is what lets `S-05` trust `S-03`'s output without re-verifying every item.
+If `severity-high` can flip back to `severity-low` after stage 4, every downstream pass has to recheck it. The cost of late-bound state is enormous in fan-out. Freezing is what lets `S-05` trust `S-03`'s output without re-verifying every item.
 
 The escape hatch is the decision log — relabeling is allowed, but it's deliberate and recorded.
 
